@@ -1,0 +1,66 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "airbnb",
+    "prettier",
+    "plugin:import/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "import", "simple-import-sort", "prettier"],
+  "rules": {
+    // Import plugin
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "tsx": "never",
+        "ts": "never"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
+        "newlines-between": "always"
+      }
+    ],
+    "import/no-extraneous-dependencies": "off", // Skip check for dependencies vs devDependencies
+    "import/prefer-default-export": "off", // Named exports are easier to refactor & have better support in IDE
+
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "no-param-reassign": "off",
+
+    "react/require-default-props": "off", // defaultProps are not used in that project
+    "react/jsx-props-no-spreading": "off", // allow spreading props
+
+    // probably will be enabled (?)
+    "no-shadow": "off",
+    "react/destructuring-assignment": "off"
+  },
+
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  }
+}
