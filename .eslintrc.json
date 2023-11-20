@@ -52,7 +52,8 @@
 
     // probably will be enabled (?)
     "no-shadow": "off",
-    "react/destructuring-assignment": "off"
+    "react/destructuring-assignment": "off",
+    "react/no-unescaped-entities": ["error", { "forbid": ["&apos;", "&lsquo;", "&#39;", "&rsquo;"] }]
   },
 
   "settings": {

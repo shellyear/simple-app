@@ -7,9 +7,7 @@ export type OutletContext = {
 }
 
 const useAuthState = () => ({
-  user: {
-    id: 'sdfsd'
-  },
+  user: undefined,
   loading: false
 })
 
@@ -18,7 +16,7 @@ export function ProtectedRoute() {
   const navigate = useNavigate()
 
   if (!user) {
-    navigate('/login')
+    navigate('/sign-in')
     return null
   }
 

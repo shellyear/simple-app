@@ -4,8 +4,9 @@ import { Link as ReactRouterLink, LinkProps as RouterLinkProps } from 'react-rou
 interface LinkProps extends MuiLinkProps, RouterLinkProps {
   color?: string
   href?: string
+  to: string
 }
 
 export function Link(props: LinkProps) {
-  return <MuiLink {...props} component={ReactRouterLink} to={props.href ?? '#'} />
+  return <MuiLink {...props} component={ReactRouterLink} to={props.to} />
 }
